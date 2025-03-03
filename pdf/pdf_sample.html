@@ -33,7 +33,10 @@
 <body>
     <div class="container">
         <h1>PDF檔案嵌入範例</h1>
-        
+           <h2>使用 object 標籤嵌入</h2>
+        <object class="pdf-container" data="您的PDF檔案路徑.pdf" type="application/pdf">
+            <p>您的瀏覽器不支援PDF嵌入，請<a href="https://pdfobject.com/pdf/sample.pdf">點擊此處</a>下載PDF檔案。</p>
+        </object>
         <!-- 使用 iframe 標籤 -->
         <h2>使用 iframe 標籤嵌入</h2>
         <iframe class="pdf-container" src="https://pdfobject.com/pdf/sample.pdf"></iframe>
