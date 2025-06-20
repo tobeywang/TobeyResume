@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履歷 - Tobey Wang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            --body-bg: #f4f4f4;
+            --dark-text: #333333;
+            --secondary-text: #555555;
+            --accent-color: #1D824D; /* 專業的森林綠 */
+            --accent-darker: #145a32;
+            --skill-bar-bg: #e9ecef;
+            --tag-bg: #e8f5e9; /* 淺綠色背景 */
+            --tag-text: #1b5e20; /* 深綠色文字 */
+        }
+        body {
+            font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+            line-height: 1.7;
+            background-color: var(--body-bg);
+            color: var(--dark-text);
+            margin: 0;
+            padding: 0;
+        }
+        .resume-container {
+            max-width: 820px;
+            margin: 30px auto;
+            background-color: var(--primary-bg);
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 35px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #111;
+            margin-bottom: 5px;
+        }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--accent-darker);
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        .header-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header-info p {
+            margin: 5px 0;
+            color: var(--secondary-text);
+        }
+        .header-info .title {
+            font-size: 1.2em;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .section-content {
+            margin-top: 20px;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        .skill-item p {
+            margin: 0 0 5px 0;
+            font-weight: 500;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: var(--skill-bar-bg);
+            border-radius: 5px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .progress {
+            background-color: var(--accent-color);
+            height: 100%;
+            display: block;
+            border-radius: 5px;
+        }
+
+        /* Experience & Education Section */
+        .job {
+            margin-bottom: 25px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--dark-text);
+        }
+        .job-company {
+            font-size: 1em;
+            color: var(--secondary-text);
+        }
+        .job-date {
+            font-style: italic;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        .tags {
+            margin-top: 10px;
+        }
+        .tags span {
+            display: inline-block;
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            border: 1px solid #d0e0d5;
+        }
+
+        /* Print-friendly styles */
+        @media print {
+            body {
+                background-color: #fff;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 10px;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .progress {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <header>
+            <h1>王靖瑤 (Tobey Wang)</h1>
+            <div class="header-info">
+                <p class="title">Full Stack Engineer | Web Developer | ML Engineer</p>
+                <p>
+                    <a href="mailto:hebeplkj@gmail.com">hebeplkj@gmail.com</a> |
+                    <span>New Taipei City, Taiwan</span> |
+                    <a href="https://github.com/tobeywang" target="_blank">GitHub</a>
+                </p>
+            </div>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="section-content">
+                    <p>
+                        擁有 7 年金融業系統問題解決與建構經歷的軟體工程師。專長使用C#、VueJs建構企業 Web 應用程式、Web API、MSSQL數據處理與調校，
+						以及核心系統轉換等領域擁有豐富經驗外，我對人工智慧充滿熱忱，並將其應用於實際專案中。
+                    </p>
+                    <p>
+                        具備國立台北教育大學資訊科學所碩士學位，主修 AI 機器學習演算法於台灣股市的預測模型研究，為我在AI領域奠定了扎實的理論基礎。
+						自主研究AI專案涵蓋自然語言處理 (NLP)、電腦視覺 (Computer Vision) 以及機器學習 (Machine Learning) 等多個面向
+                    </p>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Professional Skills</h2>
+                <div class="section-content skills-grid">
+                    <div class="skill-item">
+                        <p>ASP.Net C#</p>
+                        <div class="progress-bar"><span class="progress" style="width: 90%;"></span></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Python</p>
+                        <div class="progress-bar"><span class="progress" style="width: 65%;"></span></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>JavaScript</p>
+                        <div class="progress-bar"><span class="progress" style="width: 80%;"></span></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Vue.js</p>
+                        <div class="progress-bar"><span class="progress" style="width: 60%;"></span></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>SQL</p>
+                        <div class="progress-bar"><span class="progress" style="width: 80%;"></span></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>PHP</p>
+                        <div class="progress-bar"><span class="progress" style="width: 70%;"></span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Work Experience</h2>
+                <div class="section-content">
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <h3>系統規劃師</h3>
+                                <div class="job-company">台新銀行</div>
+                            </div>
+                            <div class="job-date">May 2023 – Present</div>
+                        </div>
+                        <ul>
+                            <li>負責訓練、召募、差勤系統維護與HRIS核心系統轉換專案，完成差勤模組轉換上線。</li>
+                            <li>擔任系統供應商合約溝通及行政事務的技術窗口，並建立SOP與記錄文件，減少行政處理與溝通時間。</li>
+							<li>建置網站自動化測試工具與腳本設計，減少測試人工介入與測試步驟並留存測試記錄。</li>
+                        </ul>
+                        <div class="tags">
+                            <span>#MVC</span><span>#CSharp</span><span>#JavaScript</span><span>#MSSQL</span><span>#VB.Net</span>
+                        </div>
+                    </div>
+                    <div class="job">
+                        <div class="job-header">
+                             <div>
+                                <h3>軟體工程師</h3>
+                                <div class="job-company">元大投信</div>
+                            </div>
+                            <div class="job-date">May 2021 – April 2023</div>
+                        </div>
+                        <ul>
+                            <li>主導 CRM、業務管理及決策支援系統的全端開發，提升業務端執行效率，並供決策長官快速獲得公司營運狀況。</li>
+                            <li>負責 WebApi 串接，進行數據整理與調校，並產出分析報表。</li>
+                        </ul>
+                        <div class="tags">
+                           <span>#Vue.Js</span><span>#JavaScript</span><span>#CSharp</span><span>#MSSQL</span><span>#PLSQL</span>
+                        </div>
+                    </div>
+                     <div class="job">
+                        <div class="job-header">
+                             <div>
+                                <h3>資深後端工程師</h3>
+                                <div class="job-company">奧美廣告</div>
+                            </div>
+                            <div class="job-date">April 2020 – April 2021</div>
+                        </div>
+                        <ul>
+                            <li>開發客戶官網後台與前台資料串接、企業 LineBot 行銷後台，幫助大型企業數位行銷成效。</li>
+                            <li>支援客戶行銷活動，參與技術發展研究團隊。研究主題：人像生成模型</li>
+                        </ul>
+                        <div class="tags">
+                           <span>#PHP</span><span>#JavaScript</span><span>#CSharp</span><span>#SQL</span><span>#AMS</span><span>#LineBot</span>
+                        </div>
+                    </div>
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <h3>程式設計師/專案管理</h3>
+                                <div class="job-company">國泰投信</div>
+                            </div>
+                            <div class="job-date">April 2016 – April 2020</div>
+                        </div>
+                        <ul>
+                            <li>負責業助下單系統、募集系統與管理分析報表開發維運，協助基金事務工作系統化。</li>
+                            <li>研究 OCR 辨識、聊天機器人、RPA自動化、預測模型等 PoC專案。</li>
+                        </ul>
+                        <div class="tags">
+                           <span>#Delphi</span><span>#CSharp</span><span>#MSSQL</span><span>#PLSQL</span><span>#Python</span><span>#JavaScript</span>
+                        </div>
+                    </div>
+					<div class="job">
+                        <div class="job-header">
+                            <div>
+                                <h3>程式設計師</h3>
+                                <div class="job-company">碩天科技</div>
+                            </div>
+                            <div class="job-date">Feb 2012 – April 2015</div>
+                        </div>
+                        <ul>
+                            <li>進銷存系統開發與週邊串接，使產品生產過程能提高掌握度。</li>
+                            <li>企業入口網開發與維護，提供可靠平台供同仁使用。</li>
+                        </ul>
+                        <div class="tags">
+                           <span>#MVC</span><span>#CSharp</span><span>#MSSQL</span>
+                        </div>
+                    </div>
+					<div class="job">
+                        <div class="job-header">
+                            <div>
+                                <h3>MES工程師</h3>
+                                <div class="job-company">華致資訊</div>
+                            </div>
+                            <div class="job-date">August 2009 – Feb 2012</div>
+                        </div>
+                        <ul>
+                            <li>負責出貨標籤系統客製系統，降低出貨逾時問題與提升正確性。</li>
+                            <li>產線問題解決，使產線運作順暢保持24小時正常運作。</li>
+                        </ul>
+                        <div class="tags">
+                           <span>#ClientServer</span><span>#VB</span><span>#CSharp</span><span>#PLSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="education">
+                <h2>Education</h2>
+                <div class="section-content">
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <h3>Master's Degree, Computer Science</h3>
+                                <div class="job-company">國立台北教育大學</div>
+                            </div>
+                            <div class="job-date">2017 – 2019</div>
+                        </div>
+                        <ul>
+                            <li>研究機器學習演算法，應用於台灣股市預測並產出高品質模型。</li>
+                            <li>實作關於辨識、預測、對話等不同領域的 Side Project。</li>
+                        </ul>
+                        <div class="tags">
+                            <span>#MachineLearning</span><span>#NeuralNetwork</span><span>#CNN</span><span>#OCR</span><span>#TF-IDF</span><span>#Jieba</span>
+                        </div>
+                    </div>
+					<div class="job">
+                        <div class="job-header">
+                            <div>
+                                <h3>bachelor's Degree, Department of Information Management</h3>
+                                <div class="job-company">南台科技大學</div>
+                            </div>
+                            <div class="job-date">2005 – 2009</div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
