@@ -20,7 +20,7 @@
             --tag-text: #1b5e20; /* 深綠色文字 */
         }
         body {
-            font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.7;
             background-color: var(--body-bg);
             color: var(--dark-text);
@@ -38,7 +38,7 @@
         header {
             text-align: center; /* 將圖片和文字置中 */
         }
-	header img {
+        header img {
             width: 150px; /* 圖片寬度 */
             height: 150px; /* 圖片高度 */
             border-radius: 50%; /* 圖片裁剪為正圓形 */
@@ -46,61 +46,30 @@
             border: 3px solid var(--accent-color); /* 圖片外框 */
             object-fit: cover; /* 確保圖片內容完整且不變形 */
         }
-        h1, h2 {
-            font-weight: 700;
-        }
         h1 {
             font-size: 2.5em;
-            text-align: center;
-            color: #222;
+            color: var(--dark-text);
             margin-bottom: 5px;
         }
-        h2 {
-            font-size: 1.5em;
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
-            margin-top: 35px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        h3 {
-            font-size: 1.2em;
-            color: #111;
-            margin-bottom: 5px;
-        }
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        a:hover {
-            color: var(--accent-darker);
-            text-decoration: underline;
-        }
-        ul {
-            padding-left: 20px;
-            list-style-type: disc;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-
         .header-info {
-            text-align: center;
-            margin-bottom: 30px;
+            margin-top: 10px;
         }
         .header-info p {
             margin: 5px 0;
-            color: var(--secondary-text);
+            color: var(--dark-text);
         }
         .header-info .title {
             font-size: 1.2em;
             color: var(--accent-color);
             font-weight: 600;
         }
-        
-        .section-content {
-            margin-top: 20px;
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--dark-text);
+            text-decoration: underline;
         }
         
         /* Skills Section */
