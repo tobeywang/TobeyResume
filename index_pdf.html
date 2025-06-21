@@ -87,6 +87,14 @@
             color: var(--accent-color);
             font-weight: 600;
         }
+	.header img {
+            width: 150px; /* 圖片寬度 */
+            height: 150px; /* 圖片高度 */
+            border-radius: 50%; /* 圖片裁剪為正圓形 */
+            margin-bottom: 15px; /* 圖片與姓名之間的間距 */
+            border: 3px solid var(--accent-color); /* 圖片外框 */
+            object-fit: cover; /* 確保圖片內容完整且不變形 */
+        }
         
         .section-content {
             margin-top: 20px;
@@ -183,17 +191,20 @@
 <body>
 
     <div class="resume-container">
-        <header>
-            <img src="images/S__14229507.jpg" alt="Tobey Wang" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 15px;">
-            <h1>王靖瑤 (Tobey Wang)</h1>
-            <div class="header-info">
-                <p class="title">Full Stack Engineer | Web Developer | ML Engineer</p>
-                <p>
-                    <a href="mailto:hebeplkj@gmail.com">hebeplkj@gmail.com</a> |
-                    <span>New Taipei City, Taiwan</span> |
-                    <a href="https://github.com/tobeywang" target="_blank">GitHub</a>
-                </p>
-            </div>
+	<header>
+	    <!-- 大頭照 -->
+	    <img src="images/S__14229507.jpg" alt="Tobey Wang">
+	    <!-- 姓名 -->
+	    <h1>王靖瑤 (Tobey Wang)</h1>
+	    <!-- 職位與聯繫資訊 -->
+	    <div class="header-info">
+		<p class="title">Full Stack Engineer | Web Developer | ML Engineer</p>
+		<p>
+		    <a href="mailto:hebeplkj@gmail.com">hebeplkj@gmail.com</a> |
+		    <span>New Taipei City, Taiwan</span> |
+		    <a href="https://github.com/tobeywang" target="_blank">GitHub</a>
+		</p>
+	    </div>
         </header>
 
         <main>
