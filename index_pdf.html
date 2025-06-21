@@ -140,6 +140,28 @@
             font-weight: 500;
             border: 1px solid #d0e0d5;
         }
+	.reference {
+            margin-top: 20px;
+        }
+        .reference-item {
+            margin-bottom: 20px;
+        }
+        .reference-item h3 {
+            font-size: 1.2em;
+            color: var(--dark-text);
+            margin-bottom: 5px;
+        }
+        .reference-item p {
+            margin: 5px 0;
+            color: var(--dark-text);
+        }
+        .reference-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .reference-item a:hover {
+            text-decoration: underline;
+        }
 
         /* Print-friendly styles */
         @media print {
@@ -358,9 +380,30 @@
                     </div>
                 </div>
             </section>
-
+	    <!-- 推薦人區塊 -->
+            <section id="references">
+	            <h2>推薦人 (References)</h2>
+	            <div class="reference">
+	                <!-- 推薦人 1 -->
+	                <div class="reference-item">
+	                    <h3>李大明 (David Lee)</h3>
+	                    <p>職位：技術總監 (Technical Director)</p>
+	                    <p>公司：XYZ 科技股份有限公司</p>
+	                    <p>Email：<a href="mailto:david.lee@xyztech.com">david.lee@xyztech.com</a></p>
+	                    <p>電話：+886-912-345-678</p>
+	                </div>
+	                <!-- 推薦人 2 -->
+	                <div class="reference-item">
+	                    <h3>陳小美 (Amy Chen)</h3>
+	                    <p>職位：資深工程師 (Senior Engineer)</p>
+	                    <p>公司：ABC 新創公司</p>
+	                    <p>Email：<a href="mailto:amy.chen@abcstartup.com">amy.chen@abcstartup.com</a></p>
+	                    <p>電話：+886-987-654-321</p>
+	                </div>
+	            </div>
+            </section> 
         </main>
     </div>
-
+	
 </body>
 </html>
