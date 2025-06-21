@@ -167,11 +167,12 @@
         @media print {
             body {
                 background-color: #fff;
+        	font-size: 12px; /* 縮小字體大小 */
             }
             .resume-container {
                 box-shadow: none;
                 margin: 0;
-                padding: 10px;
+        	padding: 20px; /* 減少內邊距 */
                 max-width: 100%;
                 border-radius: 0;
             }
@@ -179,6 +180,15 @@
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
+	    section {
+	        margin-top: 15px; /* 減少區塊間距 */
+	    }
+	    h1 {
+	        font-size: 1.8em; /* 縮小標題字體 */
+	    }
+	    h2 {
+	        font-size: 1.4em; /* 縮小副標題字體 */
+	    }
         }
     </style>
 </head>
