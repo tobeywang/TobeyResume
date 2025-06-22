@@ -86,17 +86,40 @@
             font-weight: 500;
         }
         .progress-bar {
+            position: relative;
             width: 100%;
             background-color: var(--skill-bar-bg);
             border-radius: 5px;
-            height: 10px;
-            overflow: hidden;
+            height: 16px;
+            overflow: visible; /* 讓數字不會被裁切 */
         }
+
         .progress {
             background-color: var(--accent-color);
             height: 100%;
             display: block;
             border-radius: 5px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .progress-percent {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 0.95em;
+            font-weight: bold;
+            pointer-events: none;
+            white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            z-index: 2;
+            /* left 由行內樣式動態設置 */
+        }
+        .project-img {
+          max-width: 100%;
+          height: auto;
         }
 
         /* Experience & Education Section */
@@ -140,7 +163,7 @@
             font-weight: 500;
             border: 1px solid #d0e0d5;
         }
-	.reference {
+	   .reference {
             margin-top: 20px;
         }
         .reference-item {
@@ -167,12 +190,12 @@
         @media print {
             body {
                 background-color: #fff;
-        	font-size: 12px; /* 縮小字體大小 */
+        	   font-size: 12px; /* 縮小字體大小 */
             }
             .resume-container {
                 box-shadow: none;
                 margin: 0;
-        	padding: 20px; /* 減少內邊距 */
+        	    padding: 20px; /* 減少內邊距 */
                 max-width: 100%;
                 border-radius: 0;
             }
@@ -180,19 +203,25 @@
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
-	    section {
-	        margin-top: 15px; /* 減少區塊間距 */
-	    }
-	    h1 {
-	        font-size: 1.8em; /* 縮小標題字體 */
-	    }
-	    h2 {
-	        font-size: 1.4em; /* 縮小副標題字體 */
-	    }
-	    #education {
-        	page-break-before: always; /* 強制在列印時換頁 */
-	    }
-    }
+            .project-img {
+                max-width:300px;   /* 依需求調整縮小尺寸 */
+                height: auto;
+              }
+            section {
+                margin-top: 15px; /* 減少區塊間距 */
+            }
+            h1 {
+                font-size: 1.8em; /* 縮小標題字體 */
+            }
+            h2 {
+                font-size: 1.4em; /* 縮小副標題字體 */
+            }
+            #education {
+                page-break-before: always; /* 強制在列印時換頁 */
+            }
+            .secJob {
+                page-break-before: always; /* 強制在列印時換頁 */
+            }
         }
     </style>
 </head>
@@ -235,27 +264,39 @@
                 <div class="section-content skills-grid">
                     <div class="skill-item">
                         <p>ASP.Net C#</p>
-                        <div class="progress-bar"><span class="progress" style="width: 90%;"></span></div>
+                        <div class="progress-bar"><span class="progress" style="width: 90%;"></span>
+                        <span class="progress-percent"  style="left: 84%;">90%</span>
+                        </div>
                     </div>
                     <div class="skill-item">
                         <p>Python</p>
-                        <div class="progress-bar"><span class="progress" style="width: 65%;"></span></div>
+                        <div class="progress-bar"><span class="progress" style="width: 70%;"></span>
+                        <span class="progress-percent"  style="left: 64%;">70%</span>
+                        </div>
                     </div>
                     <div class="skill-item">
                         <p>JavaScript</p>
-                        <div class="progress-bar"><span class="progress" style="width: 80%;"></span></div>
+                        <div class="progress-bar"><span class="progress" style="width: 80%;"></span>
+                        <span class="progress-percent"  style="left: 74%;">80%</span>
+                        </div>
                     </div>
                     <div class="skill-item">
                         <p>Vue.js</p>
-                        <div class="progress-bar"><span class="progress" style="width: 60%;"></span></div>
+                        <div class="progress-bar"><span class="progress" style="width: 65%;"></span>
+                        <span class="progress-percent"  style="left: 59%;">65%</span>
+                        </div>
                     </div>
                     <div class="skill-item">
                         <p>SQL</p>
-                        <div class="progress-bar"><span class="progress" style="width: 80%;"></span></div>
+                        <div class="progress-bar"><span class="progress" style="width: 90%;"></span>
+                        <span class="progress-percent"  style="left: 84%;">90%</span>
+                        </div>
                     </div>
                     <div class="skill-item">
                         <p>PHP</p>
-                        <div class="progress-bar"><span class="progress" style="width: 70%;"></span></div>
+                        <div class="progress-bar"><span class="progress" style="width: 60%;"></span>
+                        <span class="progress-percent"  style="left: 54%;">60%</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -280,7 +321,7 @@
                             <span>#MVC</span><span>#CSharp</span><span>#JavaScript</span><span>#MSSQL</span><span>#VB.Net</span>
                         </div>
                     </div>
-                    <div class="job">
+                    <div class="job secJob">
                         <div class="job-header">
                              <div>
                                 <h3>軟體工程師</h3>
@@ -407,7 +448,7 @@
                     </div>
                     <p><strong>描述：</strong>基金多樣資訊查詢、不同角度評量基金績效與排序、線上線下申購地圖、投資試算計劃。</p>
                     <p><strong>技術棧：</strong>Python、MessagingAPI、Flask</p>
-                    <img src="images/Mansky_Line1.PNG" alt="LineBot_基金資訊平台">
+                    <img src="images/Mansky_Line1.PNG" class="project-img" alt="LineBot_基金資訊平台">
                     <div class="tags">
                         <span>#爬蟲</span>
                     </div>
@@ -430,24 +471,7 @@
                     </div>
                 </div> 
             </div>
-            <div class="section-content">
-            <div class="job">
-                <div class="job-header">
-                    <div>
-                        <h3>人臉辨識系統開發</h3>
-                    </div>
-                </div>
-                <p><strong>描述：</strong><p>結合 Pillow 與 OpenCV 進行影像處理</p>
-                <p>利用卷積神經網路（CNN）建立人臉辨識模型。</p>
-                <p><strong>技術棧：</strong>Python、CNN、OpenCV</p>
-                <img src="images/Pillow_Model1.PNG" alt="人臉辨識系統開發">
-                <div class="tags">
-                    <span>#影像辨識</span>
-                </div>
-            </div> 
-        </div>
-                
-        </section>
+            </section>
 	    <!-- 推薦人區塊 -->
             <section id="references">
 	            <h2>References</h2>
